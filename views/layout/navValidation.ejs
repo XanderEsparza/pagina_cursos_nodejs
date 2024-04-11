@@ -1,0 +1,5 @@
+<% if (userRol === 2) { %>
+    <%- include('nav.ejs');%>
+<% } else if(userRol === 1) { %>
+    <%- include('navadmin.ejs');%>
+<% } %>

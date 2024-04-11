@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login2.css">
+    <title>Login</title>
+</head>
+<body>
+    <form action="/login/auth" method="post" id="loginForm">
+        <div class="container">
+            <div class="card">
+                <a class="login">Inicio de Sesión</a>
+                
+                
+                <div class="inputBox">
+                    <input type="text" required="required" name="usuario" id="usuario">
+                    <span class="user">Usuario</span>
+                </div>
+                
+                <div class="inputBox">
+                    <input type="password" required="required" name="password" id="password">
+                    <span>Contraseña</span>
+                </div>
+                <a href="/users/create"> <span>¿No tienes una cuenta? Registrate</span></a>
+                
+                <button class="enter" type="submit">Ingresar</button>
+                
+                
+                
+            </div>
+        </div>
+    </form>
+    
+    <div class="triangulo-grande"></div>
+    <div class="triangulo-pequeno"></div>
+</body>
+</html>

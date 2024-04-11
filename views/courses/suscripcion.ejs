@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/usuarios.css">
+    <title>Suscripciones</title>
+</head>
+<body>
+<%- include('../layout/nav.ejs');%>
+    <div class="tabla">
+        <h2>Historial de compra de suscripciones</h2>
+        <table class="table-desktop">
+            <thead>
+                <th>ID</th>
+                <th>Codigo</th>
+                <th>Fecha compra</th>
+                <th>Fecha vencimiento</th>
+                <th>Estatus</th>
+                <th>Nivel</th>
+            </thead>
+            <tbody>
+                <% if (!suscripciones || suscripciones.length === 0) { %>
+                    <tr>
+                        <td colspan="6">No hay historial de suscripciones</td>
+                    </tr>
+                    <% } else { %>
+                        <% suscripciones.forEach(function(suscripcion) { %>
+                            <tr>
+                                <td><%= suscripcion.id %></td>
+                                <td><%= suscripcion.codigo %></td>
+                                <td><%= suscripcion.fecha_compra %></td>
+                                <td><%= suscripcion.fecha_vencimiento %></td>
+                                <td><%= suscripcion.estatus %></td>
+                                <td><%= suscripcion.nivel %></td>
+                            </tr>
+                    <% }); %>
+                <% } %>
+                            
+                            
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+            </tbody>
+        </table>
+
+        <% suscripciones.forEach(function(suscripciones) { %>
+            <div class="tableMobile">
+                <div class="fila">
+                    <div class="columna">
+                        <div class="header">ID</div>
+                        <div class="contenido"><%= suscripciones.id %></div>
+                    </div>
+                </div>
+                
+                <div class="fila">
+                    <div class="columna">
+                        <div class="header">Codigo</div>
+                        <div class="contenido"><%= suscripciones.codigo %></div>
+                    </div>
+                </div>
+                
+                <div class="fila">
+                    <div class="columna">
+                        <div class="header">Fecha de compra</div>
+                        <div class="contenido"><%= suscripciones.fecha_compra %></div>
+                    </div>
+                </div>
+                
+                <div class="fila">
+                    <div class="columna">
+                        <div class="header">Fecha de vencimiento</div>
+                        <div class="contenido"><%= suscripciones.fecha_vencimiento %></div>
+                    </div>
+                </div>
+                
+                <div class="fila">
+                    <div class="columna">
+                        <div class="header">Estatus</div>
+                        <div class="contenido"><%= suscripciones.estatus %></div>
+                    </div>
+                </div>
+
+                <div class="fila">
+                    <div class="columna">
+                        <div class="header">Nivel</div>
+                        <div class="contenido"><%= suscripciones.nivel %></div>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+            
+            
+            
+            </div>
+        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 100px;
+    padding: 0;
+    background: linear-gradient(to left, #0C8F8F, #6BB39B);
+ 
+}
+
+.error-message{
+    color: rgb(139, 43, 43);
+}
+
+h2{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px 60px;
+    background-color: #dfdfdf;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    background-color: #F0A818;
+    margin-left: 250px;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a{
+    background-color: #F0A818;
+    color: #000000;
+    font-weight: bold;
+    padding: 2px 4px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e59900;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 5%;
+        width: 80%;
+    }
+
+    .form-group{
+        padding-left: 10%;
+        width: 70%;
+    }
+
+    button{
+        margin-left: 100px;
+        padding: 20px;
+    }
+
+    a{
+        margin-left: 30px;
+    }
+}

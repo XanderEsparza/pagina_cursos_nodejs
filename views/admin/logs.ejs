@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Logs</title>
+    <link rel="stylesheet" href="/css/usuarios.css">
+</head>
+<body>
+
+<!-- NavBar -->
+<%- include('../layout/navValidation.ejs');%>
+            <div class="tabla">
+                <h2>Logs</h2>
+            <table class="table-desktop">
+            <thead>
+                <th>ID</th>
+                <th>Nivel</th>
+                <th colspan="2">Mensaje</th>
+                <th>Fecha</th>
+            </thead>
+            <tbody>
+                <% if (!logs || logs.length === 0) { %>
+                    <tr>
+                        <td colspan="6">No hay usuarios registrados</td>
+                    </tr>
+                <% } else { %>
+                    <% logs.forEach(function(log) { %>
+                        <tr>
+                            <td><%= log.id %></td>
+                            <td><%= log.level %></td>
+                            <td colspan="2"><%= log.message %></td>
+                            <td><%= log.createdAt %></td>
+                        </tr>
+                    <% }); %>
+                <% } %>
+    
+                <!--Boton Eliminar-->
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        
+        </table>
+        <% logs.forEach(function(log) { %>
+        <div class="tableMobile">
+            <div class="fila">
+            <div class="columna">
+                <div class="header">ID</div>
+                <div class="contenido"><%= log.id %></div>
+            </div>
+            </div>
+
+            <div class="fila">
+            <div class="columna">
+                <div class="header">Nombre</div>
+                <div class="contenido"><%= log.level %></div>
+            </div>
+            </div>
+
+            <div class="fila">
+            <div class="columna">
+                <div class="header">Apellidos</div>
+                <div class="contenido"><%= log.message %></div>
+            </div>
+            </div>
+
+            <div class="fila">
+            <div class="columna">
+                <div class="header">Email</div>
+                <div class="contenido"><%= log.createdAt %></div>
+            </div>
+            </div>
+
+        </div>
+        <% }); %>
+ 
+</div>
+</body>
+</html>

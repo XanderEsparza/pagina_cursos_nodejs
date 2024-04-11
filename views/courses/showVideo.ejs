@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz de Cursos</title>
+    <link rel="stylesheet" href="/css/interfazcursos.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <%- include('../layout/navValidation.ejs');%>
+    </nav>
+    <!-- Fin Navbar -->
+    
+    <!-- Videos -->
+    <div class="container">
+        <div class="sidebar">
+            <h2>Lista de Videos</h2>
+            <ul id="courseList">
+                <% course.videos.forEach(video => { %>
+                    <li data-video="<%= video.url %>" data-description="<%= course.descripcion %>">Curso:<%= course.titulo %></li>
+                <% }); %>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="video-player">
+                <video id="videoPlayer" width="560" height="315" src="/uploads/" controls></video>
+            </div>
+            <div class="course-info">
+                <h3>Descripción del Curso</h3>
+                <p id="courseDescription"></p>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Videos -->
+    <script src="/js/interfazvideos.js"></script>
+</body>
+</html>

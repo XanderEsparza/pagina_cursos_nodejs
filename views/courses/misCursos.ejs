@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos comprados</title>
+    <link rel="stylesheet" href="/css/cursosAdmin.css">
+    <link rel="stylesheet" href="/css/categoriasAdmin.css">
+    <!-- linea de codigo para ponerle color a la cabecera movil -->
+    <meta name="theme-color" content="#white">
+</head>
+<body>
+<!-- NavBar -->
+    <%- include('../layout/nav.ejs');%>
+<!--Distintas categorias -->
+    <div class="categoria">
+        <div class="wrapper-container">
+            <% courses.forEach(course => { %>
+                <% purchases.forEach(purchase => { %>
+                    <% if(purchase.id_curso === course.id) { %>
+                    <% course.images.forEach(image => { %>
+                    <div class="wrapper2">
+                        <div class="img2">
+                            <img class="img2" src="/../uploads/<%= image.url %>" alt="Imagen previa">
+                        </div>
+                        <div class="info">
+                            <div class="text2">
+                                <h2 class="namecurso"><%= course.titulo %></h2>
+                                <p class="description"><%= course.descripcion %></p>
+                            </div>
+                            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;" >
+                                <a href="/courses/show/videos/<%= course.id %>"><button class="btnComprar btnEditar"  type="button">Ver curso</button></a>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+                <% } %>
+                <% }); %>
+            <% }); %>
+        </div>
+
+
+        <div class="categoria">
+            <div class="wrapper-container">
+                <% courses.forEach(course => { %>
+                    <% memberships.forEach(membership => { %>
+                        <% if(membership.id_curso === course.id) { %>
+                        <% course.images.forEach(image => { %>
+                        <div class="wrapper2">
+                            <div class="img2">
+                                <img class="img2" src="/../uploads/<%= image.url %>" alt="Imagen previa">
+                            </div>
+                            <div class="info">
+                                <div class="text2">
+                                    <h2 class="namecurso"><%= course.titulo %></h2>
+                                    <p class="description"><%= course.descripcion %></p>
+                                </div>
+                                <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;" >
+                                    <a href="/courses/show/videos/<%= course.id %>"><button class="btnComprar btnEditar"  type="button">Ver curso</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                    <% } %>
+                    <% }); %>
+                <% }); %>
+            </div>
+
+<!-- <%- include('../layout/footer.ejs');%> -->
+
+
+</body>
+</html>

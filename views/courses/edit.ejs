@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/registrarcurso.css">
+    <title>Cursos</title>
+</head>
+<body>
+    <%- include('../layout/navValidation.ejs');%>
+    <div class="container" id="container">
+        <h2>Editar Curso</h2>
+        <form action="/courses/update/<%= course.id %>" enctype="multipart/form-data" method="post" >
+            <div class="form-group">
+                <label for="titulo">Titulo:</label>
+                <input type="text" id="titulo" name="titulo" required maxlength="25" placeholder="Titulo del curso..." value="<%= course.titulo %>">
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="categoria">Categoria:</label>
+                <input type="text" id="categoria" name="categoria" required maxlength="20" placeholder="Categoria del curso..." value="<%= course.categoria %>">
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10" required maxlength="250" placeholder="Descripcion del curso..."><%= course.descripcion %></textarea>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" required step="0.01" pattern="^\d+(?:\.\d{1,2})?$" placeholder="000.00" value="<%= course.precio %>">
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="nivel">Nivel:</label>
+                <select name="nivel" id="nivel">
+                    <option value="<%= course.nivel %>"><%= course.nivel %></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            
+            
+            <div class="form-group" id="div_objetivos">
+                <label for="objetivo">Objetivos:</label>
+                <input type="text" id="objetivos" name="objetivos[]" maxlength="250" placeholder="Objetivo...">
+            </div>
+            <a id="agregarCampo">Añadir Objetivo +</a><br><br>
+            
+            
+            <div class="form-group">
+                <label for="imagenes">Imagen:</label>
+                <input type="file" id="imagenes" name="imagenes" accept="image/*">
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="videos">Videos:</label>
+                <input type="file" id="videos" name="videos" multiple accept="video/*">
+            </div>
+            
+            
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </div>    
+    
+    <script src="/js/crearCurso.js"></script>
+</body>
+</html>

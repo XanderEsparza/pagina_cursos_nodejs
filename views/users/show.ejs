@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Usuarios Registrados</title>
+    <link rel="stylesheet" href="/css/usuarios.css">
+</head>
+<body>
+
+<!-- NavBar -->
+<%- include('../layout/navValidation.ejs');%>
+            <div class="tabla">
+                <h2>Lista de Usuarios Registrados</h2>
+            <table class="table-desktop">
+            <thead>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th>Usuario</th>
+                <th  class="text-center">Acciones</th>
+            </thead>
+            <tbody>
+                <% if (!users || users.length === 0) { %>
+                    <tr>
+                        <td colspan="6">No hay usuarios registrados</td>
+                    </tr>
+                <% } else { %>
+                    <% users.forEach(function(user) { %>
+                        <tr>
+                            <td><%= user.id %></td>
+                            <td><%= user.nombre %></td>
+                            <td><%= user.apellidos %></td>
+                            <td><%= user.email %></td>
+                            <td><%= user.usuario %></td>
+                            <td>
+                                <form action="/users/destroy/<%= user.id %>" method="POST">
+                                        <button for="btn-modal" class="button" type="submit">
+                                            <svg viewBox="0 0 448 512" class="svgIcon"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path></svg>
+                                        </button>
+            
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                <% } %>
+    
+                <!--Boton Eliminar-->
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        
+        </table>
+        <% users.forEach(function(user) { %>
+        <div class="tableMobile">
+            <div class="fila">
+            <div class="columna">
+                <div class="header">ID</div>
+                <div class="contenido"><%= user.id %></div>
+            </div>
+            </div>
+
+            <div class="fila">
+            <div class="columna">
+                <div class="header">Nombre</div>
+                <div class="contenido"><%= user.nombre %></div>
+            </div>
+            </div>
+
+            <div class="fila">
+            <div class="columna">
+                <div class="header">Apellidos</div>
+                <div class="contenido"><%= user.apellidos %></div>
+            </div>
+            </div>
+
+            <div class="fila">
+            <div class="columna">
+                <div class="header">Email</div>
+                <div class="contenido"><%= user.email %></div>
+            </div>
+            </div>
+
+            <div class="fila">
+            <div class="columna">
+                <div class="header">Usuario</div>
+                <div class="contenido"><%= user.usuario %></div>
+            </div>
+            </div>
+
+            <div class="fila">
+            <div class="columna">
+                <div class="header">ACCIONES</div>
+                <div class="contenido">
+    
+                <!--Boton de eliminar--> 
+                <form action="/users/destroy/<%= user.id %>" method="POST">
+                    <button for="btn-modal" class="button" type="submit">
+                        <svg viewBox="0 0 448 512" class="svgIcon"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path></svg>
+                    </button>
+                </form>
+
+
+
+                </div>
+            </div>
+            </div>
+        </div>
+        <% }); %>
+        
+
+
+</div>
+
+    
+
+</body>
+</html>

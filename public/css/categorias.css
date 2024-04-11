@@ -1,0 +1,238 @@
+.tittle-categ{
+    background-color: #6BB39B;
+    text-transform: uppercase;
+    font-weight: bold;
+  font-size: 20px;
+    padding: 8px 0 8px 30px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+.categoria{
+    margin-top: 30px;
+}
+
+
+
+.wrapper2{
+float: left;
+margin-left: 5%;
+height: 200px;
+height: auto;
+/* width: 350px; */
+width: calc(350px - 20px);
+border-radius: 7pxrgb(49, 49, 49)x 7px;
+box-shadow: 0px 14px 32px 0px #00000043;
+display: flex;
+border: 1.5px solid rgba(203, 203, 203, 0.297);
+margin-bottom: 50px;
+
+}
+
+.wrapper2:hover{
+    scale: 1.02;
+    .img2{
+        filter: brightness(92%);
+    }
+    .btnComprar{
+        scale: 1.1;
+        background-color: #4b796a;
+        color: #ffffff;
+    }
+
+}
+
+.img2{
+    width: 150px;
+    height: 198px;
+    border-radius: 7px 0 0 7px;
+}
+
+.info{
+    width: 350px;
+    background-color: #ffffff;
+    border-radius: 0 7px 10px 7px;
+    overflow: hidden; /* Ocultar el texto que sobresale */
+}
+
+.namecurso{
+    text-align: center;
+    color: #232323;
+    margin: 0 0 0 2px;
+    padding-top: 10px;
+    font-size: 25px;
+}
+
+.text2{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.description{
+    color: #474747;
+    margin: 10px 20px 0 15px;
+    text-align: justify;
+    font-size: 14px;
+    margin-bottom: 15px;
+    overflow: hidden; /* Ocultar el texto que sobresale */
+    white-space: nowrap; /* Impedir el retorno de carro */
+    text-overflow: ellipsis; /* Agregar puntos suspensivos */
+}
+
+.pricebtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.pricecurso{
+    text-align: center;
+color: rgb(69, 69, 69);
+font-size: 22px;
+font-weight: bold;
+}
+
+.btnComprar{
+    background-color: #6BB39B;
+    color: #000000;
+    float: right;
+    width: 100px;
+    height: 30px;
+    border-radius: 60px;
+    border-color: transparent;
+    align-self: flex-end;
+}
+
+
+
+/*diseno responsive mobil*/
+@media only screen and (min-width: 200px)  and (max-width: 600px)   {
+    .tittle-categ{
+        margin-top: 5px;
+        font-size: 2vh;
+        padding-left: 20px;
+    }
+
+    
+
+    .wrapper2{
+        margin-left: 6%;
+        height: 230px;
+        width: 170px;
+        /* margin-left: 20%; */
+        align-items: center;
+        place-content: center;
+        border-radius: 7px 7px 7px 7px;
+        box-shadow: 0px 14px 32px 0px #00000043;
+        display: flex;
+        border: 1.5px solid rgba(203, 203, 203, 0.297);
+        margin-bottom: 30px;
+        }
+
+.img2{
+    display: none;
+}
+
+.info{
+    width: 130px;
+    border-radius: 0 7px 10px 7px;
+}
+
+.namecurso{
+    font-size: 16px;
+}
+
+.description{
+    font-size: 10px;
+    margin-bottom: 0;
+}
+
+.pricebtn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 10px;
+}
+
+.pricecurso{
+color: rgb(69, 69, 69);
+font-size: 15px;
+font-weight: bold;
+}
+
+.btnComprar{
+    background-color: #6BB39B;
+    color: #000000;
+    float: right;
+    width: 59px;
+    height: 20px;
+    font-size: 15px;
+    border-radius: 60px;
+    border-color: transparent;
+}
+@media only screen and (min-width: 500px)  and (max-width: 600px)  {
+
+    .wrapper2{
+        margin-left: 7%;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 900px) {
+    .wrapper2{
+        margin-left: 6%;
+        height: 230px;
+        width: 120px;
+        /* margin-left: 20%; */
+        align-items: center;
+        place-content: center;
+        border-radius: 7px 7px 7px 7px;
+        box-shadow: 0px 14px 32px 0px #00000043;
+        display: flex;
+        border: 1.5px solid rgba(203, 203, 203, 0.297);
+        margin-bottom: 30px;
+        }
+.namecurso{
+    font-size: 12px;
+}
+
+.description{
+    font-size: 6px;
+    margin-bottom: 5px;
+}
+
+.pricecurso{
+    font-size: 10px;
+    }
+
+    .btnComprar{
+        width: 55px;
+        height: 20px;
+        font-size: 8px;
+    }
+
+}
+
+
+
+
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1190px) {
+    .tittle-categ{
+        font-size: 20px;
+    }
+
+    .wrapper2{
+        margin-left: 7%;
+        }
+
+
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1700px){
+    .wrapper2{
+        margin-left: 8%;
+        }
+}

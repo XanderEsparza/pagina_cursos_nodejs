@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.login {
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.card {
+    /* border: 1.5px solid #0000002d; */
+    margin-top: 6%;
+    padding-top: 30px;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    width: 600px;
+    flex-direction: column;
+    gap: 35px;
+    background: #e3e3e3;
+    box-shadow: 16px 16px 32px #c8c8c8,
+        -16px -16px 32px #fefefe;
+    border-radius: 8px;
+}
+
+.inputBox {
+    position: relative;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: #000;
+    font-size: 1em;
+    /* background: transparent; */
+    background-color: #ffffffb4;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transition: 0.1s;
+    border-radius: 8px;
+    /* border-bottom-left-radius: 8px; */
+}
+
+.inputBox span {
+    
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    transform: translateY(-4px);
+    margin-left: 10px;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 12px;
+    color: #000;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 3px;
+    border-radius: 8px;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+    transform: translateX(113px) translateY(-15px);
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background: #000;
+    letter-spacing: 0.2em;
+    color: #fff;
+    border: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+border: 2px solid #000;
+border-radius: 8px;
+border-right: 2px solid #ffc23f;
+border-top: 2px solid #ff961e;
+}
+
+.enter {
+    height: 45px;
+    width: 100px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 1em;
+}
+
+.enter:hover {
+background-color: rgb(0, 0, 0);
+color: white;
+font-weight: bold;
+scale: 1.1;
+}
+
+
+.triangulo-grande, .triangulo-pequeno {
+    width: 0;
+    height: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.triangulo-grande {
+    border-left: 150px solid #1a1a1a; 
+    border-top: 150px solid transparent;
+}
+
+.triangulo-pequeno {
+    border-left: 75px solid #F0A818; 
+    border-top: 75px solid transparent;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/registro.css">
+    <!-- <script src="registro.js"></script> -->
+    <title>Registro</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <center>
+                <a class="login">Regístrate</a>
+            </center>
+            <form action="/users/store" method="post">
+                <div class="inputBox">
+                    <input type="text" name="nombre" required="required" value="<%= formData.nombre || '' %>" maxlength="50">
+                    <span class="nombre" id="nombre">Nombre</span>
+                </div>
+                <% if (errors) { %>
+                    <% errors.forEach(error => { %>
+                        <% if (error.path === 'nombre') { %>
+                            <div  class="error-message"><%= error.msg %></div>
+                        <% } %>
+                    <% }); %>
+                <% } %>
+                <br>
+                <div class="inputBox">
+                    <input type="text" required="required" name="apellidos" value="<%= formData.apellidos || '' %>" maxlength="50">
+                    <span class="apellidosRegistro" id="apellidosRegistro">Apellidos</span>
+                </div>
+                <% if (errors) { %>
+                    <% errors.forEach(error => { %>
+                        <% if (error.path === 'apellidos') { %>
+                            <div class="error-message"><%= error.msg %></div>
+                        <% } %>
+                    <% }); %>
+                <% } %>
+                <br>
+                <div class="inputBox">
+                    <input type="text" required="required" name="usuario" value="<%= formData.usuario || '' %>" maxlength="16">
+                    <span class="user" id="usuarioRegistro">Usuario</span>
+                </div>
+                <% if (errors) { %>
+                    <% errors.forEach(error => { %>
+                        <% if (error.path === 'usuario') { %>
+                            <div class="error-message"><%= error.msg %></div>
+                        <% } %>
+                    <% }); %>
+                <% } %>
+                <br>
+                <div class="inputBox">
+                    <input type="email" required="required" name="email" value="<%= formData.email || '' %>" >
+                    <span class="emailRegistro" id="emailRegistro">Email</span>
+                </div>
+                <% if (errors) { %>
+                    <% errors.forEach(error => { %>
+                        <% if (error.path === 'email') { %>
+                            <div class="error-message"><%= error.msg %></div>
+                        <% } %>
+                    <% }); %>
+                <% } %>
+                <br>
+                <div class="inputBox">
+                    <input type="password" id="passwordField" required="required" autocomplete="new-password" name="password" value="<%= formData.password || '' %>" maxlength="16">
+                    <span id="contraseñaRegistro">Contraseña</span>
+                </div>
+                <% if (errors) { %>
+                    <% errors.forEach(error => { %>
+                        <% if (error.path === 'password') { %>
+                            <div class="error-message"><%= error.msg %></div>
+                        <% } %>
+                    <% }); %>
+                <% } %>
+                <br>
+                <div class="inputBox">
+                    <input type="number" required="required" name="edad" value="<%= formData.edad || '' %>">
+                    <span class="usernacimiento" id="nacimientoRegistro">Edad</span>
+                </div>
+                <% if (errors) { %>
+                    <% errors.forEach(error => { %>
+                        <% if (error.path === 'edad') { %>
+                            <div class="error-message"><%= error.msg %></div>
+                        <% } %>
+                    <% }); %>
+                <% } %>
+                <br>
+                <div>
+                    <a href="/login" class="back">Regresar</a>
+                    <button class="enter" type="submit">Entrar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="triangulo-grande"></div>
+    <div class="triangulo-pequeno"></div>
+
+</body>
+
+</html>

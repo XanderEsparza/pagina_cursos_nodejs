@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso</title>
+    <link rel="stylesheet" href="/css/detallesCurso.css">
+    
+</head>
+<body>
+    <%- include('../layout/navValidation.ejs');%>
+    
+    <div class="container">
+        <% course.images.forEach(image => { %>
+            <div class="main-content">
+                <div class="infocurso">
+                    <h1 class="cateori" id="categoria"><%= course.categoria %></h1>
+                    <p><%= course.descripcion %></p>
+                </div>
+            </div>
+            <div class="overlay-content">
+                <img src="/uploads/<%= image.url %>" alt="Imagen">
+                <p class="describecurso">Esto es solo una vista previa. El contenido completo del curso estara disponible despues de comprarlo o reclamarlo.</p>
+                <h3>$<%= course.precio %></h3>
+
+                <% let cursoComprado = false; %>
+                    <% purchases.forEach(purchase => { %>
+                        <% if (purchase.id_curso === course.id) { %>
+                            <% cursoComprado = true; %>
+                        <% } %>
+                    <% }) %>
+
+                    <% let cursoReclamado = false; %>
+                    <% memberships.forEach(membership => { %>
+                        <% if (membership.id_curso === course.id) { %>
+                            <% cursoReclamado = true; %>
+                        <% } %>
+                    <% }) %>
+
+                    <% if (cursoComprado) { %>
+                        <p>Curso comprado</p>
+                    <% } else if (cursoReclamado) { %>
+                        <p>Curso reclamado</p>
+                    <% } else { %>
+                        <% if (user.puntos > 0 && subscription.nivel >= course.nivel) { %>
+                            <a href="/reclamar/curso/<%= course.id %>"><button>Reclamar: <%= user.puntos %></button></a>
+                        <% } else { %>
+                                <a href="#"><button disabled>Reclamar</button></a>
+                            <% } %>
+                        <button id="comprar">Comprar</button>
+                    <% } %>
+
+                
+                        
+
+            </div>
+            
+            <div class="learning">
+                <h2 class="aprendizajes">Lo que aprenderas:</h2>
+                <ul class="icon-list">
+                    <% course.objectives.forEach(objective => { %>
+                        <li><%= objective.objetivo %></li>
+                        <% }); %>
+                    </ul>
+                </div>
+        <% }); %>
+                
+            </div>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
+                <path fill="#6BB39B" fill-opacity="1" d="M0,32L34.3,32C68.6,32,137,32,206,42.7C274.3,53,343,75,411,90.7C480,107,549,117,617,101.3C685.7,85,754,43,823,48C891.4,53,960,107,1029,122.7C1097.1,139,1166,117,1234,90.7C1302.9,64,1371,32,1406,16L1440,0L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+            </svg>
+            
+            <script>
+                const comprar = document.getElementById("comprar")
+                
+                comprar.addEventListener("click", async() => {
+                    const res = await fetch("/checkout-session/purchase/<%= course.id %>", {
+                        method: "POST",
+                    });
+                    const data = await res.json();
+                    console.log(data);
+                    window.location.href = data.url;
+                })
+            </script>
+        </body>
+        </html>

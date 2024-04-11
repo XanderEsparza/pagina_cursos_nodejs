@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina principal</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/categorias.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- linea de codigo para ponerle color a la cabecera movil -->
+    <meta name="theme-color" content="#white">
+</head>
+<body>
+<!-- NavBar -->
+    <%- include('../layout/navValidation.ejs');%>
+<!-- carrucel -->
+    <div class="carrucel">
+        <%- include('../layout/carrucel.ejs');%>
+    </div>
+        
+<!--Distintas categorias -->
+
+    <div class="categoria">
+        <div class="wrapper-container">
+            <% courses.forEach(course => { %>
+                <% course.images.forEach(image => { %>
+                    <div class="wrapper2">
+                        <div class="img2">
+                            <img class="img2" src="/../uploads/<%= image.url %>" alt="Imagen previa">
+                        </div>
+                        <div class="info">
+                            <div class="text2">
+                                <h2 class="namecurso"><%= course.titulo %></h2>
+                                <p class="description"><%= course.descripcion %></p>
+                            </div>
+                            <p class="pricecurso">$
+                                <span><%= course.precio %></span>
+                            </p>
+                            <div class="pricebtn">
+                                <a href="/courses/show/<%= course.id %>"><button class="btnComprar"  type="button">Ver Más</button></a>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% }); %>
+        </div>
+    </div><br>
+    
+<!-- seccion de mas vendido -->
+    <div class="masvendido">
+        <span class="textmvendido">Lo Mas Nuevo</span>
+        <div class="container2">
+            <% nuevosCursos.forEach(nuevoCurso => { %>
+                <% nuevoCurso.images.forEach(image => { %>
+                    <div class="category2">
+                        <h2 class=""><%= nuevoCurso.categoria %></h2>
+                        <div class="circle"><img src="/../uploads/<%= image.url %>"alt="Imagen curso nuevo"></div>
+                        <h2 class="namecircle"><%= nuevoCurso.titulo %></h2>
+                        <a href="/courses/show/<%= nuevoCurso.id %>"><button class="vermas">Ver más</button></a>
+                    </div>
+                <% }); %>
+            <% }); %>
+            
+            <!-- Seccion de card de suscripcion -->
+            <div class="card-container">
+                <div class="card">
+                    <h2>Plan Básico</h2>
+                    <p class="desccard">Con nuestro Plan Básico, pueder reclamar a una amplia variedad de cursos seleccionados. Aprende a tu propio ritmo con contenido de calidad que cubre una amplia gama de temas. </p>
+                    <h3>Beneficios:</h3>
+                    <ul class="ventajas">
+                        <li>Reclamacion de cursos de Nivel 1</li>
+                        <li>1 Punto de canje al mes</li>
+                    </ul>
+                    <p class="preciocard">$5.00</p>
+                    <% if(subscription.estatus === 0 || subscription.codigo === 0){ %>
+                        <button class="btncard" id="basicSub">Contratar</button>
+                    <% } else if(subscription.estatus === 1){%>
+                        <button class="btncard" disabled>Suscripción Activa</button>
+                    <% } %>
+                </div>
+                <div class="card">
+                    <h2>Plan Medio</h2>
+                    <p class="desccard">Mejora tu experiencia de aprendizaje con nuestro Plan Medio. Obtén acceso completo a todos los cursos de nivel 2 que reclames. </p>
+                    <h3>Beneficios:</h3>
+                    <ul class="ventajas">
+                        <li>Reclamacion de cursos de Nivel 2</li>
+                        <li>2 Puntos de canje al mes</li>
+                    </ul>
+                    <p class="preciocard">$10.00</p>
+                    <% if(subscription.estatus === 0 || subscription.codigo === 0){ %>
+                        <button class="btncard" id="mediumSub">Contratar</button>
+                    <% } else if(subscription.estatus === 1){%>
+                        <button class="btncard" disabled>Suscripción Activa</button>
+                    <% } %>
+                </div>
+                <div class="card">
+                    <h2>Plan Premium</h2>
+                    <p class="desccard">Hazte con puntos de nivel maximo para obtener acceso completo a todos los cursos de todos los niveles que reclames para llevar tu aprendizaje al siguiente nivel. </p>
+                    <h3>Beneficios:</h3>
+                    <ul class="ventajas">
+                        <li>Reclamacion de cursos de Nivel 3</li>
+                        <li>3 Puntos de canje al mes</li>
+                    </ul>
+                    <p class="preciocard">$15.00</p>
+                    <% if(subscription.estatus === 0 || subscription.codigo === 0){ %>
+                        <button class="btncard" id="premiumSub">Contratar</button>
+                    <% } else if(subscription.estatus === 1){%>
+                        <button class="btncard" disabled>Suscripción Activa</button>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="quiensomos">
+    <div class="imgocolor">
+
+    </div>
+
+    <div class="textoquien">
+        <h2 class="tittlequien">¿Quiénes somos?</h2>
+        <p class="infoquien">Bienvenidos a Ajolotics, tu destino para el aprendizaje en línea. En Ajlolotics, nos dedicamos a proporcionar cursos de alta calidad que te ayudarán a alcanzar tus objetivos educativos y profesionales.
+            En Ajolotics, creemos en el poder transformador de la educación. Nuestra misión es brindar acceso a una educación de calidad y empoderar a las personas para que alcancen su máximo potencial, sin importar su ubicación o situación personal.
+        </p>
+    </div>
+</div>
+
+
+<%- include('../layout/footer.ejs');%>
+
+<script>
+    const basicSub = document.getElementById("basicSub")
+    const mediumSub = document.getElementById("mediumSub")
+    const premiumSub = document.getElementById("premiumSub")
+
+    basicSub.addEventListener("click", async() => {
+        const res = await fetch("/checkout-session/basico", {
+            method: "POST",
+        });
+        const data = await res.json();
+        console.log(data);
+        window.location.href = data.url;
+    })
+
+    mediumSub.addEventListener("click", async() => {
+        const res = await fetch("/checkout-session/medio", {
+            method: "POST",
+        });
+        const data = await res.json();
+        console.log(data);
+        window.location.href = data.url;
+    })
+
+    premiumSub.addEventListener("click", async() => {
+        const res = await fetch("/checkout-session/premium", {
+            method: "POST",
+        });
+        const data = await res.json();
+        console.log(data);
+        window.location.href = data.url;
+    })
+
+</script>
+</body>
+</html>

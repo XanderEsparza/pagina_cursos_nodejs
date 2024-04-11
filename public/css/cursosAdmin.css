@@ -1,0 +1,438 @@
+
+.selectcurso{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    clear: both; 
+    padding-top: 20px; 
+    background-color: #ffffff;
+}
+
+    /* display: block; Convierte los botones en bloques para que aparezcan uno debajo del otro */
+.opcion {
+    border-radius: 20px;
+    margin-top: 20px; 
+    margin-left: 15px;
+    margin-bottom: 15px;
+    color: #090909;
+    width: auto;
+    height: auto;
+    padding: 0.7em 1.7em;
+    margin-left: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 8px #c5c5c5;
+}
+
+.opcion:hover {
+border: 1px solid white;
+box-shadow: 6px 6px 7px #9e9e9e;
+}
+
+.opcion:active {
+box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+
+
+
+.selection{
+    margin-left: 3%;
+    font-size: 4vh;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.categoria{
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+
+.masvendido{
+    width: 100%;
+    clear: both; 
+}
+
+.textmvendido{
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-left: 50px;
+    margin-top: 20px;
+    background-color: #090909;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.namecircle{
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+.container2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    height: 370px;
+    background-color: #FFAD08;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+
+.category2 {
+    width: calc(25% - 20px); /* 25% del ancho de la pantalla con un margen de 20px entre elementos */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 15px auto 10px;
+}
+
+.circle img{
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.vermas {
+    background-color: #2f2f2f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+.vermas:hover{
+    scale: 1.05;
+    background-color: #171717;
+}
+
+.quiensomos{
+    margin-top: 400px;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.imgocolor{
+float: left;
+height: 300px;
+width: 40%;
+margin: 0 30px 20px 30px;
+background-color: #0C8F8F;
+}
+
+.textoquien{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, 'BlinkMacSystemFont', Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.infoquien{
+    margin: 30px 30px;
+    line-height: 30px;
+    text-align: justify;
+}
+
+
+.card-container {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    height: 300px;
+    background-color: #f0f0f0ad;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 5px;
+    color: #090909;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 2px 2px 8px #c5c5c5;
+    position: relative; 
+    
+}
+
+.card:hover{
+    box-shadow: 4px 4px 8px #b2dfae;
+}
+
+.card h2{
+    text-align: center;
+}
+
+.card h3{
+    padding-left: 20px;
+    margin-top: 5px;
+    color: #0d664b;
+    text-decoration: underline;
+}
+
+.card li {
+    list-style-type: none; 
+    flex-basis: calc(33.333% - 20px);
+    padding-left: 20px; /* Espacio a la izquierda para el icono */
+    line-height: 1.5; /* Espacio entre líneas para un mejor aspecto */
+}
+
+.card li::before {
+    content: "✔"; 
+    font-weight: 900; 
+    margin-right: 10px;
+}
+
+.card .preciocard{
+    margin-top: 10px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.desccard{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    text-align: justify;
+}
+
+.btncard{
+    background-color: #73B06F;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    padding: 10px 30px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px; 
+    margin-left: 100px;
+
+}
+
+.btncard:hover{
+    background-color: #4d714a;
+    color: #ffffff;
+    scale: 1.1;
+
+}
+
+@media (orientation: portrait) {
+
+    body{
+        margin-top: 140px;
+    }
+    .selection{
+        margin-left: 3%;
+        font-size: 2.2vh;
+        font-weight: 550;
+    }
+    .opcion {
+        margin-top: 20px;
+        /* width: 80px;
+        height: 35px; */
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    .container2{
+        margin-bottom: 10px;
+        height: 270px;
+    }
+    
+.textmvendido{
+    font-size: 15px;
+    width: 100px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.namecircle{
+font-size: 15px;
+margin-bottom: 10px;
+}
+
+.category2 {
+    font-size: 10px;
+}
+
+.circle {
+    width: 90px;
+    height: 90px;
+    margin: 10px auto 5px;
+}
+
+.circle img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.vermas {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.container2 {
+margin-bottom: 40px;
+}
+
+.quiensomos{
+    height: 360px;
+    width: 100%;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.imgocolor{
+float: left;
+height: 200px;
+width: 40%;
+margin: 0 20px 20px 20px;
+background-color: #0C8F8F;
+}
+
+.tittlequien{
+font-size: 20px;
+text-align: left;
+margin-bottom: 10px;
+}
+
+.infoquien{
+    margin: 10px 30px;
+    font-size: 10px;
+    line-height: 20px;
+    text-align: justify;
+}
+
+.footeer{
+    margin-top: 5pxs;
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    height: 270px;
+    font-size: 10px;
+    background-color: #f0f0f0ad;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #090909;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 2px 2px 8px #c5c5c5;
+    position: relative; 
+    
+}
+
+.card h2{
+    font-size: 12px;
+}
+.desccard{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding-left: 1px;
+    text-align: justify;
+    font-size: 11px;
+}
+.card .preciocard{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+.card li {
+    list-style-type: none; 
+    flex-basis: calc(33.333% - 20px);
+    padding-left: 1px; /* Espacio a la izquierda para el icono */
+    line-height: 1.5; /* Espacio entre líneas para un mejor aspecto */
+}
+
+.card li::before {
+    content: "✔"; 
+    font-weight: 900; 
+    margin-right: 10px;
+}
+
+.btncard{
+    background-color: #73B06F;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    padding: 5px 5px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px; 
+    margin-left:0;
+    width: 80px;
+    font-size: 10px;
+
+}
+}
+/*movil horiozontl Y Tablet*/
+@media only screen and (min-width: 500px) and (max-width: 1023px) {
+
+
+    .selection{
+        font-size: 20px;
+    }
+    .opcion {
+        font-size: 15px;
+    }
+
+}
+
+
+@media only screen and (min-width: 1400px) {
+/* .opcion{
+        width: 200px;
+        height: 50px;
+}    */
+
+.card-container {
+    margin-top: 60px;
+   padding-left: 100px;
+    
+}
+}
+
+.footeer{
+background-color: #1e1e1e;
+color: #ffffff;
+height: 100px;
+padding-left: 50px;
+padding-top: 20px;
+}
+
+
+
+
+
+
