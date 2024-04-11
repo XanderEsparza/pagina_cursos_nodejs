@@ -10,18 +10,18 @@
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "ajolotics",
-    "host": "127.0.0.1",
+    "password": "TSuDKZhGDqbdufDZdBRoGXepajSXaLsi",
+    "database": "railway",
+    "host": "roundhouse.proxy.rlwy.net",
     "dialect": "mysql",
     "logging": false,
     "logTableName": "logs"
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "ajolotics",
-    "host": "127.0.0.1",
+    "password": "TSuDKZhGDqbdufDZdBRoGXepajSXaLsi",
+    "database": "railway",
+    "host": "roundhouse.proxy.rlwy.net",
     "dialect": "mysql",
     "logging": false,
     "logTableName": "logs"
